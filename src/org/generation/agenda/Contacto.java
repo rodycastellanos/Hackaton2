@@ -25,4 +25,9 @@ public class Contacto {
     public String getApellido() {
         return apellido;
     }
+
+    // --- Setter para teléfono ---
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }
