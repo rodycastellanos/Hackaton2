@@ -20,8 +20,16 @@ public class Agenda {
     // ---------------- Métodos principales ---------------- //
 
     public void anadirContacto(Contacto c) {
-        if (c.getName().isEmpty() || c.getApellido().isEmpty()) {
+        if (c.getName().trim().isEmpty() || c.getApellido().trim().isEmpty()) {
             System.out.println("❌ El nombre y el apellido no pueden estar vacíos.");
+            return;
+        }
+        if (c.getName().matches(".*[^a-zA-ZáéíóúÁÉÍÓÚñÑ ].*")) {
+            System.out.println("⚠️ El nombre y el apellido no pueden contener símbolos o números.");
+            return;
+        }
+        if (c.getApellido().matches(".*[^a-zA-ZáéíóúÁÉÍÓÚñÑ ].*")) {
+            System.out.println("⚠️ El nombre y el apellido no pueden contener símbolos o números.");
             return;
         }
         if (agendaLlena()) {
@@ -84,7 +92,7 @@ public class Agenda {
 
     public void modificarTelefono(String name, String apellido, String nuevoTelefono) {
         for (Contacto c : contactos) {
-            if (c.getName().equalsIgnoreCase(name) && c.getApellido().equalsIgnoreCase(apellido)) {
+            if (c.getName().equalsIgnoreCase(name)) {
                 c.setTelefono(nuevoTelefono);
                 System.out.println("✅ Teléfono actualizado correctamente.");
                 return;
