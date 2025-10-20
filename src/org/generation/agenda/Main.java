@@ -26,8 +26,15 @@ public class Main {
         do {
             mostrarMenu();
             System.out.print("Elige una opción: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                scanner.nextLine(); // limpiar el salto de línea
+            } else {
+                System.out.println("⚠️ Entrada no válida. Por favor ingresa un número.");
+                scanner.nextLine(); // limpiar la entrada incorrecta
+                opcion = -1; // fuerza repetir el menú
+            }
+
 
             switch (opcion) {
                 case 1: // Añadir Contacto
