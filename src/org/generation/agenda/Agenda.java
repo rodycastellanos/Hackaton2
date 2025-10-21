@@ -36,13 +36,13 @@ import java.util.ArrayList;
          * Añade un contacto a la agenda
          */
         public void anadirContacto(Contacto c) {
-            if (agendaLlena()) {
-                System.out.println("No se puede añadir. La agenda está llena.");
+            if (existeContacto(c)) {
+                System.out.println("El contacto '" + c.getNombre() + "' ya existe.");
                 return;
             }
 
-            if (existeContacto(c)) {
-                System.out.println("El contacto '" + c.getNombre() + "' ya existe.");
+            if (agendaLlena()) {
+                System.out.println("No se puede añadir. La agenda está llena.");
                 return;
             }
 
