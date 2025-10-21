@@ -46,6 +46,15 @@ import java.util.ArrayList;
                 return;
             }
 
+            if (c.getNombre().trim().isEmpty()) {
+                System.out.println("❌ El nombre y el apellido no pueden estar vacíos.");
+                return;
+            }
+
+            if (c.getNombre().matches(".*[^a-zA-ZáéíóúÁÉÍÓÚñÑ ].*")) {
+                System.out.println("⚠️ El nombre y el apellido no pueden contener símbolos o números.");
+                return;
+            }
             contactos.add(c);
             System.out.println("Contacto '" + c.getNombre() + "' añadido.");
         }
