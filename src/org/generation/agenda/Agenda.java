@@ -121,4 +121,22 @@ import java.util.ArrayList;
         public int espaciosLibres() {
             return tamanoMaximo - contactos.size();
         }
+
+
+        /*
+        * Modifica el número del teléfono
+        * */
+
+        public void modificarTelefono(String nombre, String nuevoTelefono) {
+            for (Contacto c : contactos) {
+                if (c.getNombre().equalsIgnoreCase(nombre)) {
+                    c.setTelefono(nuevoTelefono);
+                    System.out.println("Teléfono de '" + nombre + "' actualizado correctamente.");
+                    return;
+                }
+            }
+            System.out.println("No se encontró el contacto con el nombre '" + nombre + "'.");
+        }
+
+
     }

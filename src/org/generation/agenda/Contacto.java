@@ -20,7 +20,12 @@ public class Contacto {
     public String getTelefono() {
         return telefono;
     }
-/**
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    /**
  * Sobrescribimos equals() para definir cuándo dos contactos son iguales
  * Dos contactos son iguales si tienen el mismo nombre (case-insensitive)
  */

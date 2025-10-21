@@ -76,6 +76,14 @@ public class Main {
                 case 7: // Ver espacios libres
                     System.out.println("Quedan " + agenda.espaciosLibres() + " espacios libres en la agenda.");
                     break;
+                        // Modifificar el teléfono
+                case 8: // Modificar teléfono
+                    System.out.print("Introduce el nombre del contacto a modificar: ");
+                    String nombreModificar = scanner.nextLine();
+                    System.out.print("Introduce el nuevo número de teléfono: ");
+                    String nuevoTelefono = scanner.nextLine();
+                    agenda.modificarTelefono(nombreModificar, nuevoTelefono);
+                    break;
                 case 0: // Salir
                     System.out.println("¡Hasta pronto!");
                     break;
@@ -98,6 +106,7 @@ public class Main {
         System.out.println("5. Eliminar contacto");
         System.out.println("6. Comprobar si la agenda está llena");
         System.out.println("7. Ver espacios libres");
+        System.out.println("8. Modificar teléfono de un contacto");
         System.out.println("0. Salir");
         System.out.println("=============================");
     }
